@@ -9,7 +9,7 @@ class Comment extends React.Component {
   }
 
   likeIncrement = () => {
-    console.log('Increment...');
+    //console.log('Increment...');
     var value = this.state.likes;
     this.setState({
       likes: ++value,
@@ -25,19 +25,22 @@ class Comment extends React.Component {
 
   render() {
     return (
-      <>
+      <div class="comment-card">
         <div>
           This is from comment. Author:{' '}
-          {this.props.auther ? this.props.auther : 'None'}
+          {this.props.author ? this.props.author : 'None'}
         </div>
         <div>
           Likes: {this.state.likes}{' '}
-          <span onClick={this.likeIncrement} style={{ color: 'red', cursor: 'pointer' }}>
+          <span
+            onClick={this.likeIncrement}
+            style={{ color: 'red', cursor: 'pointer' }}
+          >
             &hearts;
           </span>
         </div>
         <button onClick={this.likeDecrement}>Decrment</button>
-      </>
+      </div>
     );
   }
 }
