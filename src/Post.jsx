@@ -2,11 +2,13 @@ import React from 'react';
 import Comment from './Comment';
 
 function Post() {
+  const authors = ['Me', 'SomeOne', 'AnotherOne'];
   return (
     <div>
       <div>My first Post...!</div>
-      <Comment author="Me" />
-      <Comment author="SomeOne"/>
+      {authors.map((item) => {
+        return <Comment author={item} />;
+      })}
     </div>
   );
 }
