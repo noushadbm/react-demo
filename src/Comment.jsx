@@ -23,9 +23,19 @@ class Comment extends React.Component {
     });
   };
 
+  componentDidMount() {
+    console.log('Mount');
+    fetch('https://randomuser.me/api/')
+      .then((resp) => resp.json())
+      .then(({ results }) => {
+        this.setState({ person: results[0] });
+        console.log(results[0]);
+      });
+  }
+
   render() {
     return (
-      <div class="comment-card">
+      <div className="comment-card">
         <div>
           This is from comment. Author:{' '}
           {this.props.author ? this.props.author : 'None'}
