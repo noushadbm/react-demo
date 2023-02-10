@@ -3,12 +3,17 @@ import { ThemeContext } from './theme-context';
 
 const Footer = () => {
   return (
-    <>
-      <div className="footer-box">
-        <div>Developed by Me.</div>
-        <div>Current Count: {}</div>
-      </div>
-    </>
+    <ThemeContext.Consumer>
+      {(theme) => (
+        <div
+          className="footer-box"
+          style={{ backgroundColor: theme.background, color: theme.foreground }}
+        >
+          <div>This id dveloped by Me!</div>
+          <div>--This is footer--</div>
+        </div>
+      )}
+    </ThemeContext.Consumer>
   );
 };
 

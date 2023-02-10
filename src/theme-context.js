@@ -3,14 +3,12 @@ import React from 'react';
 export const themes = {
   light: {
     foreground: '#000000',
-    background: '#eeeeee',
+    background: '#ffffff',
   },
   dark: {
-    foreground: '#ffffff',
-    background: '#222222',
+    foreground: '#000000',
+    background: '#ffffff',
   },
 };
 
-export const ThemeContext = React.createContext(
-  themes.dark // default value
-);
+export const ThemeContext = React.createContext({ theme: themes.dark });

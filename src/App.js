@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.css';
 import Post from './Post';
-import { ThemeContext } from './theme-context';
+import { ThemeContext, themes } from './theme-context';
 
 export default function App() {
   return (
-    <ThemeContext.Provider value={2}>
+    <ThemeContext.Provider value={themes.dark}>
       <div>
-        <h1>Hello StackBlitz!</h1>
+        <h1>Hello World!</h1>
         <p>Start editing to see some magic happen :)</p>
         <Post />
       </div>
