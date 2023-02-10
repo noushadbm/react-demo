@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
+import Footer from './Footer';
 
 function Post() {
   const authors = ['Me', 'SomeOne', 'AnotherOne'];
@@ -9,6 +10,7 @@ function Post() {
       {authors.map((item) => {
         return <Comment author={item} />;
       })}
+      <Footer />
     </div>
   );
 }

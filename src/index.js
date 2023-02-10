@@ -1,13 +1,16 @@
-import React, { StrictMode } from 'react';
+import React, { StrictMode, createContext } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './App';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
+const MyContext = createContext();
 
 root.render(
   <StrictMode>
-    <App />
+    <MyContext.Provider value={0}>
+      <App />
+    </MyContext.Provider>
   </StrictMode>
 );
